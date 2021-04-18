@@ -1,0 +1,44 @@
+import React, { useState } from 'react';
+
+import AddCategory from './AddCategory.js.bck';
+
+const GifExpertApp = props => {
+
+    const [categories, setcategories] = useState(['One Pounch', 'Samurai X', 'Dragon Ball'])
+
+    const handleAdd = () =>{
+        
+        console.log("agregar");
+        //setcategories(  ['One Pounch1'] );
+        //categories.push("Hunter&Hunter");
+        setcategories(c => {  return [...c,'Hunter']  });
+    }
+
+    return (
+        <div>
+            <h2>GifExpertApp</h2>
+
+            <AddCategory setcategories={setcategoriesAddCategory.js}  />
+
+            <br/>
+            <button onClick={handleAdd}>Agregar</button>
+            <ul>
+                {
+                    categories.map( categorie => {
+
+                            return <li key={categorie}>{categorie}</li>;
+                        }
+                    )
+                }
+            </ul>
+        </div>
+    )
+} 
+
+GifExpertApp.propTypes = {
+
+
+}
+
+export default GifExpertApp
+

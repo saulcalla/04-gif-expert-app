@@ -1,0 +1,35 @@
+import React, {useState} from 'react'
+
+const AddCategory = ({ setcategories }) => {
+
+    const [inputValue, setInputValue] = useState('Hola Munto')
+
+    const handleOnChanhe = (e)=>{
+        
+        setInputValue( e.target.value );
+    }
+
+    const handleSubmit = ( e )=>{
+
+        e.preventDefault();
+
+        setcategories( cats => [...cats,inputValue] );
+
+        console.log("Enviar datos");
+
+        return;
+    }
+
+    return (
+        <div>
+            <form onSubmit={ handleSubmit } >
+                <input type="text" 
+                    value={ inputValue }
+                    onChange={ handleOnChanhe }
+                    />
+            </form>
+        </div>
+    )
+}
+
+export default AddCategory
